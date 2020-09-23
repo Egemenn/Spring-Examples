@@ -12,4 +12,6 @@ public interface KisiRepository extends ElasticsearchRepository<Kisi, String> {
 
     @Query("{\"bool\": {\"must\": [{\"match\": {\"ad\": \"?0\"}}]}}")
     List<Kisi> getByCustomQuery(String search);
+
+    List<Kisi> findByAdLikeOrSoyadLike(String ad, String soyad);
 }

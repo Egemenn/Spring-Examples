@@ -13,7 +13,7 @@ import javax.annotation.PostConstruct;
 import java.util.Calendar;
 import java.util.List;
 
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
 @RestController
 @RequestMapping("/kisi")
 public class KisiController {
@@ -37,7 +37,7 @@ public class KisiController {
 
     @GetMapping("/{search}")
     public ResponseEntity<List<Kisi>> getKisi(@PathVariable String search){
-        List<Kisi> kisiler = kisiRepository.getByCustomQuery(search);
+        List<Kisi> kisiler = kisiRepository.findByAdLikeOrSoyadLike(search, search);
         return ResponseEntity.ok(kisiler);
     }
 
