@@ -15,7 +15,7 @@ public class KullaniciApi {
     @Autowired
     private KullaniciRepository kullaniciRepository;
 
-    //Elle verdik mongo'da görmek için. Deneme
+    //Elle verdik denemek için
     @PostConstruct
     public void init(){
         Kullanici kullanici = new Kullanici();
