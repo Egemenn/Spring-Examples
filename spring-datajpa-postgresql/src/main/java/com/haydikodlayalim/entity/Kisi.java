@@ -1,7 +1,17 @@
 package com.haydikodlayalim.entity;
 
-import javax.persistence.*;
+import lombok.*;
 
+import javax.persistence.*;
+import java.util.List;
+
+@Entity
+@Table(name = "kisi")
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter//id'ler eşitse bu iki nesne aynı nesnedir
+@ToString
 public class Kisi {
 
     @Id
@@ -14,4 +24,9 @@ public class Kisi {
 
     @Column(length = 100, name = "soyad")
     private String soyad;
+
+    @OneToMany
+    @JoinColumn(name = "kisi_adres_id")
+    private List<Adres> adresleri;
+
 }

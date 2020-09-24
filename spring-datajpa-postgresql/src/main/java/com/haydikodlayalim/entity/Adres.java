@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "kisi adres")
+@Table(name = "kisi_adres")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -24,6 +24,10 @@ public class Adres implements Serializable {
 
     @Enumerated
     private AdresTip adresTip;
+
+    @ManyToOne
+    @JoinColumn(name = "kisi_adres_id")
+    private Kisi kisi;
 
     @Column(name = "aktif")
     private Boolean aktif;
