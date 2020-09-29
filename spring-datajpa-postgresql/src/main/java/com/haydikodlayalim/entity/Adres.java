@@ -31,7 +31,7 @@ public class Adres implements Serializable {
 
     @Column(name = "aktif")
     private Boolean aktif;
-    enum AdresTip {
+    public enum AdresTip {
         EV_ADRESI,
         IS_ADRESI,
         DIGER
