@@ -11,6 +11,7 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 @Setter//id'ler eşitse bu iki nesne aynı nesnedir
+@EqualsAndHashCode(of = {"id"})
 @ToString
 public class Kisi {
 

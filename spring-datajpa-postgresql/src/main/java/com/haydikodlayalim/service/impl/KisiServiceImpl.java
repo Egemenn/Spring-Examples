@@ -60,8 +60,10 @@ public class KisiServiceImpl implements KisiService {
             kisiDto.setId(item.getId());
             kisiDto.setAd(item.getAd());
             kisiDto.setSoyad(item.getSoyad());
-            kisiDto.setAdresleri(item.getAdresleri().stream().map(Adres::getAdres).
-                    collect(Collectors.toList()));
+            kisiDto.setAdresleri(
+                    item.getAdresleri() != null ?
+                    item.getAdresleri().stream().map(Adres::getAdres).
+                    collect(Collectors.toList()) : null);
             kisiDtos.add(kisiDto);
         });
         return kisiDtos;
